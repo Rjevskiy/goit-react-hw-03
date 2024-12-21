@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const SearchBox = ({ onFilterChange }) => {
   return (
     <div>
-      <label>
+      <label className="labelSBox">
         Find contacts by name
         <input
           type="text"
