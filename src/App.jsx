@@ -7,19 +7,19 @@ import "./App.css";
 
 const App = () => {
   const [contacts, setContacts] = useState([]); // Хранение контактов
-  const [filter, setFilter] = useState(""); // Хранение фильтра
+  const [filter, setFilter] = useState(""); // Фильтр для поиска
 
-  // Функция для добавления нового контакта
+  // Добавление нового контакта
   const addContact = (newContact) => {
     setContacts((prev) => [...prev, newContact]);
   };
 
-  // Функция для удаления контакта
+  // Удаление контакта
   const deleteContact = (id) => {
     setContacts((prev) => prev.filter((contact) => contact.id !== id));
   };
 
-  // Фильтрованный список
+  // Фильтрация контактов
   const filteredContacts = contacts.filter((contact) =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
@@ -29,10 +29,7 @@ const App = () => {
       <h1>Phonebook</h1>
       <ContactForm onAddContact={addContact} />
       <SearchBox onFilterChange={(value) => setFilter(value)} />
-      <ContactList
-        contacts={filteredContacts}
-        onDeleteContact={deleteContact}
-      />
+      <ContactList contacts={filteredContacts} onDeleteContact={deleteContact} />
     </div>
   );
 };
