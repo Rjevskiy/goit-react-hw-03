@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect  } from "react";
 import ContactForm from "./components/ContactForm/ContactForm";
 import SearchBox from "./components/SearchBox/SearchBox";
 import ContactList from "./components/ContactList/ContactList";
@@ -9,6 +9,21 @@ import "./App.css";
 const App = () => {
   const [contacts, setContacts] = useState([]); // Хранение контактов
   const [filter, setFilter] = useState(""); // Фильтр для поиска
+
+ useEffect(() => {
+    const savedContacts = localStorage.getItem("contacts");
+    if (savedContacts) {
+      setContacts(JSON.parse(savedContacts));
+    }
+  }, []);
+
+  // Збереження контактів у локальне сховище після зміни списку
+  useEffect(() => {
+    if (contacts.length > 0) {
+      localStorage.setItem("contacts", JSON.stringify(contacts));
+    }
+  }, [contacts]);
+
 
   // Добавление нового контакта
   const addContact = (newContact) => {
