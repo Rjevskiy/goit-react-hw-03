@@ -8,7 +8,7 @@ import "./Contact.css";
 
 const Contact = ({ name, number, onDelete }) => (
   <div className="contact">
-    <ul className="contact-list">
+    <ul>
       <li className="contactLi">
         <FaUser className="icon" /> {name} 
       </li>
