@@ -7,14 +7,14 @@ import "./ContactForm.css";
 
 const validationSchema = Yup.object({
   name: Yup.string()
-    .min(3, "Имя должно содержать минимум 3 символа")
-    .max(50, "Имя не должно превышать 50 символов")
-    .required("Обязательное поле"),
+    .min(3, "Ім'я повинно буди більше за 3 символа")
+    .max(50, "Ім'я не повинно перевищувати 50 символов")
+    .required("Обов'язкове поле"),
   number: Yup.string()
-    .matches(/^[\d\-]+$/, "Номер должен содержать только цифры и дефис (-)")
-    .min(3, "Номер должен содержать минимум 3 символа")
-    .max(50, "Номер не должен превышать 50 символов")
-    .required("Обязательное поле"),
+    .matches(/^[\d\-]+$/, "Номер повинен містити тільки цифри і дефіс (-)")
+    .min(3, "Довжина номера повинна бути не менше 3 символів")
+    .max(50, "Номер не повинен перевищувати 50 символів")
+    .required("Обов'язкове поле"),
 });
 
 
@@ -27,7 +27,7 @@ const ContactForm = ({ onAddContact }) => {
       number: values.number,
     };
     onAddContact(newContact);
-    resetForm(); // Сбросить форму после отправки
+    resetForm(); // Чистим форму 
   };
 
   return (
@@ -38,18 +38,18 @@ const ContactForm = ({ onAddContact }) => {
     >
       <Form className="contact-form">
         <div>
-          <label htmlFor="name">Имя</label>
-          <Field id="name" name="name" placeholder="Введите имя" />
+          <label htmlFor="name">Ім'я</label>
+          <Field id="name" name="name" placeholder="Введіть ім'я" />
           <ErrorMessage name="name" component="div" className="error" />
         </div>
 
         <div>
           <label htmlFor="number">Номер</label>
-          <Field id="number" name="number" placeholder="Введите номер" />
+          <Field id="number" name="number" placeholder="Введіть номер" />
           <ErrorMessage name="number" component="div" className="error" />
         </div>
 
-        <button type="submit">Добавить контакт</button>
+        <button type="submit">Додати контакт</button>
       </Form>
     </Formik>
   );
