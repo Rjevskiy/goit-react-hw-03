@@ -50,7 +50,7 @@ h1 {
 form {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   border: 1px solid;
   border-radius: 5px;
   padding: 20px;
@@ -89,10 +89,5 @@ button:focus-visible {
 
 
 
-.labelSBox {
-  font-weight: 500;
-  border: 1px solid;
-  border-radius: 5px;
-  padding: 20px;
-}
 
+.butContact{}
