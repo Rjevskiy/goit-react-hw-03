@@ -27,7 +27,7 @@ const ContactForm = ({ onAddContact }) => {
       number: values.number,
     };
     onAddContact(newContact);
-    resetForm(); // Чистим форму 
+    resetForm(); 
   };
 
   return (

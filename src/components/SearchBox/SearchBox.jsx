@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./SearchBox.css"; // Убедитесь, что есть файл стилей
+import "./SearchBox.css"; 
+
 
 const SearchBox = ({ filter, onFilterChange, searchType, onSearchTypeChange }) => (
   <div className="divSBox">
