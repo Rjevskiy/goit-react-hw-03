@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { FaUser, FaPhone } from "react-icons/fa"; // импортируем иконки
+import { FaUser, FaPhone } from "react-icons/fa"; //  иконки
 
-import { IoPerson } from "react-icons/io5";
+
 
 import "./Contact.css";
 
@@ -17,7 +17,7 @@ const Contact = ({ name, number, onDelete }) => (
       </li>
     </ul>
     <button className="butContact" onClick={onDelete}>
-      Delete
+      Видалити
     </button>
   </div>
 );
