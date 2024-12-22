@@ -1,0 +1,24 @@
+.divSBox {
+    display: flex;
+    flex-direction: column;
+    /* Разместим элементы по вертикали по умолчанию */
+}
+
+.search-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Добавляем пространство между элементами */
+}
+
+.search-input {
+    margin-top: 10px;
+    padding: 5px;
+    width: 200px;
+    /* Ширина поля для поиска */
+}
+.labelRadio{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}

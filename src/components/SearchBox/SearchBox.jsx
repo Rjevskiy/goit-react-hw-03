@@ -1,10 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import "./SearchBox.css"; // Убедитесь, что есть файл стилей
+
 const SearchBox = ({ filter, onFilterChange, searchType, onSearchTypeChange }) => (
-  <div>
-    <label>
+  <div className="divSBox">
+    <label className="search-label">
       Пошук контакту:
+      </label>
+      <label className="labelRadio">
       <input
         type="radio"
         value="name"
@@ -12,6 +16,8 @@ const SearchBox = ({ filter, onFilterChange, searchType, onSearchTypeChange }) =
         checked={searchType === "name"}
         onChange={onSearchTypeChange}
       />
+      
+      
       Введіть ім'я
       <input
         type="radio"
@@ -28,6 +34,7 @@ const SearchBox = ({ filter, onFilterChange, searchType, onSearchTypeChange }) =
       value={filter}
       onChange={(e) => onFilterChange(e.target.value)}
       placeholder="Пошук контакту..."
+      className="search-input"
     />
   </div>
 );
